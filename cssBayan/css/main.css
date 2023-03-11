@@ -1,0 +1,7 @@
+.container {
+    margin: auto;
+}
+
+details {
+    cursor: pointer;
+}

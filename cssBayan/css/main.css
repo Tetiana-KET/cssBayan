@@ -47,13 +47,26 @@ h1 {
     justify-content: space-between;
 }
 
+.item-title>h2 {
+    opacity: .7;
+}
+
+.item-title:hover>h2 {
+    opacity: 1;
+}
+
+.item-title:hover>.btn_x-wrap {
+    transform: rotate(135deg);
+}
+
 .btn_x-wrap {
     align-self: center;
     position: relative;
     width: 15px;
     height: 15px;
     cursor: pointer;
-    transition: all ease 0.5s;
+    opacity: 0;
+    transition: all ease .8s;
 }
 
 .btn_x-wrap::before,
@@ -65,15 +78,22 @@ h1 {
 	width: 15px;
 	height: 2px;
 	background: #000;
+   
+}
+
+.accordion:hover .btn_x-wrap {
+    opacity: 1;
+    /* transform: rotate(45deg); */
 }
 
 .btn_x-wrap::before {
-	transform: rotate(45deg);
+	/* transform: rotate(45deg); */
 }
 
 .btn_x-wrap::after {
-	transform: rotate(-45deg);
+	transform: rotate(90deg);
 }
+
 .img-wrap {
     display: inline-block;
     align-self: center;

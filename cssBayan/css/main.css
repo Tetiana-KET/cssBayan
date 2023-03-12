@@ -12,7 +12,7 @@ body {
 
 .main-content {
     width: 70%;
-    padding: 50px;
+    padding: 2%;
     margin: auto;
 }
 
@@ -23,14 +23,13 @@ body {
 }
 
 h1 {
-    border-bottom: 1px solid #D9D9D9;
-    padding-bottom: 20px;
+    border-bottom: 0.07em solid #D9D9D9;
+    padding-bottom: 2%;
     font-size: 2.5em;
     font-weight: bold;
 }
 
 h2 {
-    
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -38,9 +37,8 @@ h2 {
 .accordion-item {
     display: flex;
     flex-direction: column;
-    padding: 23px 0 15px 0;
-    cursor: pointer;
-    border-bottom: 1px solid #D9D9D9;
+    padding: 2.3% 0 1.5% 0;
+    border-bottom: 0.06em solid #D9D9D9;
 }
 
 .accordion-item>input {
@@ -48,10 +46,9 @@ h2 {
 }
 
 .item-title {
-    position: relative;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
 }
 
 .item-title>h2 {
@@ -59,28 +56,13 @@ h2 {
 }
 
 .btn_x-wrap {
+    background: url('../assets/x_icon.svg') 0 0/100% 100% no-repeat;
     align-self: center;
-    position: relative;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(135deg);
     opacity: 0;
     transition: all ease .8s;
-}
-
-.btn_x-wrap::before,
-.btn_x-wrap::after {
-	content: '';
-	position: absolute;
-	top: 7px;
-	display: block;
-	width: 15px;
-	height: 2px;
-	background: #000;
-}
-
-.btn_x-wrap::after {
-	transform: rotate(90deg);
 }
 
 .img-wrap {
@@ -114,7 +96,7 @@ h2 {
 }
 
 .accordion-input:checked ~ .item-title>.btn_x-wrap {
-    transform: rotate(135deg);
+    transform: rotate(90deg);
 }
 
 @media (hover: hover) {
@@ -127,7 +109,9 @@ h2 {
     }
     
     .accordion-item:hover .btn_x-wrap {
-        transform: rotate(135deg);
+        transform: rotate(90deg);
+        opacity: 1;
+        cursor: pointer;
     }
 
     .accordion:hover .btn_x-wrap {
@@ -146,7 +130,16 @@ h2 {
 
 @media screen and (min-width: 0px) {
     html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 250px) {
+    html {
         font-size: 70%;
+    }
+    .accordion-item {
+        padding: 5% 0 2% 0;
     }
 }
 
@@ -166,6 +159,9 @@ h2 {
     html {
         font-size: 90%;
     }
+    .accordion-item {
+        padding: 3% 0 2% 0;
+    }
 }
 
 @media screen and (min-width: 1180px) {
@@ -177,6 +173,9 @@ h2 {
 @media screen and (min-width: 1440px) {
     html {
       font-size: 115%;
+    }
+    .accordion-item {
+        padding: 2.3% 0 1.5% 0;
     }
 }
 

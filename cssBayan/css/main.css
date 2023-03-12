@@ -82,6 +82,18 @@ h2 {
     width: 100%;
 }
 
+.accordion-item:active .item-title h2 {
+    color: darkslateblue;
+}
+
+.accordion-item:active .item-title .btn_x-wrap {
+    background: url('../assets/x_icon_active.png') 0 0/100% 100% no-repeat;
+}
+
+.accordion-item:active .img-wrap .details-img {
+    opacity: 0.5;
+}
+
 .accordion-input:checked ~ .img-wrap {
     height: auto;
     opacity: 1;

@@ -45,13 +45,14 @@ h1 {
     position: relative;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 15px;
 }
 
 .item-title>h2 {
-    opacity: .7;
+    opacity: .6;
 }
 
-.item-title:hover>h2 {
+.accordion:hover .item-title>h2 {
     opacity: 1;
 }
 
@@ -78,16 +79,10 @@ h1 {
 	width: 15px;
 	height: 2px;
 	background: #000;
-   
 }
 
 .accordion:hover .btn_x-wrap {
     opacity: 1;
-    /* transform: rotate(45deg); */
-}
-
-.btn_x-wrap::before {
-	/* transform: rotate(45deg); */
 }
 
 .btn_x-wrap::after {
@@ -101,4 +96,26 @@ h1 {
     height: auto;
     margin: 0 auto;
     display: none;
+    transition: all 5s;
+}
+.img-wrap>img {
+    visibility: hidden;
+    transition: all 5s;
+}
+
+.accordion-input:checked ~ .img-wrap {
+    display: block;
+}
+
+.accordion-input:checked ~ .img-wrap>img {
+    visibility: visible;
+    transition: all 5s;
+}
+  
+.accordion-input:checked ~ .item-title>h2 {
+    opacity: 1;
+}
+
+.accordion-input:checked ~ .item-title>.btn_x-wrap {
+    transform: rotate(135deg);
 }

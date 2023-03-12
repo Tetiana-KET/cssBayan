@@ -1,0 +1,198 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    background-color: rgb(246, 239, 229);
+}
+
+.main-content {
+    width: 70%;
+    padding: 2%;
+    margin: auto;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto  ;
+}
+
+h1 {
+    border-bottom: 0.07em solid #D9D9D9;
+    padding-bottom: 2%;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.accordion-item {
+    display: flex;
+    flex-direction: column;
+    padding: 2.3% 0 1.5% 0;
+    border-bottom: 0.06em solid #D9D9D9;
+}
+
+.accordion-item>input {
+    display: none;
+}
+
+.item-title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.item-title>h2 {
+    opacity: .6;
+}
+
+.btn_x-wrap {
+    background: url('../assets/x_icon.svg') 0 0/100% 100% no-repeat;
+    align-self: center;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(135deg);
+    opacity: 0;
+    transition: all ease .8s;
+}
+
+.img-wrap {
+    display: inline-block;
+    align-self: center;
+    max-width: 100%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 1.2s;
+}
+
+.img-wrap>img {
+    transform: scale(0.8);
+    transition: all 1.2s;
+    width: 100%;
+}
+
+.accordion-item:active .item-title h2 {
+    color: darkslateblue;
+}
+
+.accordion-item:active .item-title .btn_x-wrap {
+    background: url('../assets/x_icon_active.png') 0 0/100% 100% no-repeat;
+}
+
+.accordion-item:active .img-wrap .details-img {
+    opacity: 0.5;
+}
+
+.accordion-input:checked ~ .img-wrap {
+    height: auto;
+    opacity: 1;
+}
+
+.accordion-input:checked ~ .img-wrap>img {
+    transform: scale(1);
+}
+  
+.accordion-input:checked ~ .item-title>h2 {
+    opacity: 1;
+}
+
+.accordion-input:checked ~ .item-title>.btn_x-wrap {
+    transform: rotate(90deg);
+}
+
+@media (hover: hover) {
+    .accordion-item {
+        cursor: pointer;
+    }
+    
+    .accordion:hover .item-title>h2 {
+        opacity: 1;
+    }
+    
+    .accordion-item:hover .btn_x-wrap {
+        transform: rotate(90deg);
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .accordion:hover .btn_x-wrap {
+        opacity: 1;
+    }
+
+    .accordion-item:hover .img-wrap>img {
+        transform: scale(1);
+    }
+    
+    .accordion-item:hover .img-wrap{
+        height: auto;
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 0px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 250px) {
+    html {
+        font-size: 70%;
+    }
+    .accordion-item {
+        padding: 5% 0 2% 0;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media screen and (min-width: 380px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    html {
+        font-size: 90%;
+    }
+    .accordion-item {
+        padding: 3% 0 2% 0;
+    }
+}
+
+@media screen and (min-width: 1180px) {
+    html {
+      font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+      font-size: 115%;
+    }
+    .accordion-item {
+        padding: 2.3% 0 1.5% 0;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    html {
+      font-size: 150%;
+    }
+}
